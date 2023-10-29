@@ -35,7 +35,7 @@ class TestWaitForIt(unittest.TestCase):
         return s, s.getsockname()[1]
 
     def check_args(self, args, stdout_regex, stderr_regex, should_succeed):
-        command = self.wait_script + " " + args
+        command = f'{self.wait_script} {args}'
         exitcode, out, err = self.execute(command)
 
         # Check stderr
